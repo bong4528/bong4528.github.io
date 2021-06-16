@@ -132,12 +132,46 @@ public class HelloController {
 Spring MVC의 컨트롤러 메소드에서 사용할 수 있는 반환 값에 어떤 것이 있는지, 
 어떤 방법이 있는지 대해 설명한다.
 
- ### @Controller 와 @RestController 의 차이
+#### @Controller 와 @RestController 의 차이
  
- #### @Controller 는 주로 Web 페이지의 컨트롤러에서 사용한다.
- Web 페이지용 컨트롤로는 JSP 나 템플릿 엔진 View 로 전환 응답의 HTML 을 생성하기 때문에
- 기본적으로 메소드의 반환 값은 View 전환 대상을 지정하는 데 사용한다.
+@Controller 는 주로 Web 페이지의 컨트롤러에서 사용한다.
+Web 페이지용 컨트롤로는 JSP 나 템플릿 엔진 View 로 전환 응답의 HTML 을 생성하기 때문에
+기본적으로 메소드의 반환 값은 View 전환 대상을 지정하는 데 사용한다.
  
- #### @RestController 는 Json 이나 XML 등을 반환 WebAPI용 컨트롤러로 사용한다.
- 이것은 View로 전환하지 않기 때문에 메소드의 반환 값은 응답 (Response)의 내용(content)이 된다.
+@RestController 는 Json 이나 XML 등을 반환 WebAPI용 컨트롤러로 사용한다.
+이것은 View로 전환하지 않기 때문에 메소드의 반환 값은 응답 (Response)의 내용(content)이 된다.
+
+#### @Controller
+##### 반환 값을 String 으로 한다.
+
+View 이동 페이지를 지정하는 가장 간단한 방법이다.
+```
+@RequestMapping("/method1")
+public String method1() {
+    return "/index.html";
+}
+```
+
+##### 반환 값을 ModelAndView 으로 한다.
+
+ModelAndView를 사용하면 View로 전달하려는 정보를 함께 반환할 수 있다.
+```
+@RequestMapping("/method2")
+public ModelAndView method2() {
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.addObject(new User("kimkc"));
+    modelAndView.setViewName("/index.html");
+    return modelAndView;
+}
+```
+
+##### 포워드
+
+반환 값으로 지정하여 이동처로 "forward:"를 붙이면 다른 컨트롤러 메소드로 이동한다.
+```
+@RequestMapping("/forward1")
+public String forward1() {
+    return "forward:method1";
+}
+```
 
