@@ -1,25 +1,19 @@
 # 출처 : http://www.devkuma.com/books/pages/475
 
 
-##### 컨트롤러에서 직접 텍스트 콘텐츠를 반환한다. ?? 아마도 바디에 담아 준다는 내용인듯
-
-메소드에 @ResponseBody를 붙이면 반환 값으로 직접 응답 내용을 반환할 수 있다.
-```
-    @RequestMapping("/text1")
-    @ResponseBody
-    public String text1() {
-        return "text content";
-    }
-```
+#### WAS가 웹브라우져로부터 Servlet 요청을 받으면
+1. 요청을 받을 때 전달 받은 정보를 HttpServletRequest 객체를 생성하여 저장
+2. 웹 브라우져에게 응답을 돌려준 HttpServletResponse 객체를 생성 ( 빈 객체 )
+3. 생성된 HttpServletRequest (정보가 저장된)와 HttpServletResponse(비어있는)를 Servlet에게 전달
 
 
-##### HTTPServletResponse 에서 텍스트 콘텐츠를 반환한다.
+#### HTTPServletRequest
+##### 1. Http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용
+##### 2. Header정보, Parameter, Cookie, URI, URL 등의 정보를 읽어들이는 메소드를 가진 클래스
+##### 3. Body의 Stream 을 읽어들이는 메소드를 가지고 있음.
 
-반환 값을 void로 하고 HttpServletResponse를 인자로 받도록 하면 직접 응답을 쓸 수도 있다.
-```
-@RequestMapping("/text2")
-public void text2(HttpServletResponse res) throws IOException {
-    res.getWriter().write("text content");
-}
-```
+
+#### HttpServletResponse
+##### 1.Servlet은 HttpServletResponse 객체에 ContentType, 응답코드, 응답 메시지등을 담아서 전송함.
+
 
