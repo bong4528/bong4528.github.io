@@ -8,6 +8,7 @@
 
 
 #### HTTPServletRequest
+
 ##### 1. Http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용
 ##### 2. Header정보, Parameter, Cookie, URI, URL 등의 정보를 읽어들이는 메소드를 가진 클래스
 ##### 3. Body의 Stream 을 읽어들이는 메소드를 가지고 있음.
@@ -41,6 +42,7 @@ protected void doGet('HttpServletRequest' request, HttpServletResponse response)
 
 
 #### HttpServletResponse
+    
 ##### 1.Servlet은 HttpServletResponse 객체에 ContentType, 응답코드, 응답 메시지등을 담아서 전송함.
 
 
