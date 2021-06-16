@@ -13,6 +13,7 @@
 ##### 3. Body의 Stream 을 읽어들이는 메소드를 가지고 있음.
 
 
+
 #### HttpServletResponse
 ##### 1.Servlet은 HttpServletResponse 객체에 ContentType, 응답코드, 응답 메시지등을 담아서 전송함.
 
