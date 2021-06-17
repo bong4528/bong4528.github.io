@@ -77,6 +77,18 @@ ${author}
 
 
 
+### 파라미터 전송받기
+@RequestMapping("/detail/`{author}`")
+public ModelAndView detail(`@PathVariable String author`){
+    ModelAndView view = new ModelAndView();
+    
+    return view;
+}
+
+- ?key=value 이런 식으로 할 필요없이, @PathVariable을 통해 url 자체에 파라미터를 넘길 수 있다.
+
+
+### Pathvariable 로 url 파라미터 전송해 보기
 
 
 
