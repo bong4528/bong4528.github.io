@@ -42,3 +42,11 @@ ModelMap 저장한 값 : <input type="text" value="$modelMapVar}" /><br/>
 ```
 
 
+### ModelAndView
+- addObject 를 통해 데이터를 저장
+- setViewname 을 통해 이동하고자 하는 View 를 저장
+- 메소드 안에서 ModelAndView mv = new ModelAndView();
+- return type ModelAndView
+
+
+
