@@ -90,8 +90,49 @@ public ModelAndView detail(`@PathVariable String author`){
 
 ### Pathvariable 로 url 파라미터 전송해 보기
 
+1. articleController 에 추가
+```
+@RequestMapping("/detail/`{author}`")
+public ModelAndView detail(`@PathVariable String author`){
+    ModelAndView view = new ModelAndView();
+    
+    view.setViewName("article/detail");
+    view.addObject("authorName", author);
+    return view;
+}
+```
+
+2.detail.jsp  추가
+```
+<body>
+${authorName} 지은이 입니다.
+</body>
+```
+
+3. url로 파라미터 전송
+ localhost:/HelloMVC/detail/sangbong
+ 
+결과 : sangbong 지은이 입니다.
+
+
+- @RequestParam 으로 form 안의 데이터를 직접 받을 수도 있다.
+- @PathVariable과 @RequestParam을 혼합해서 사용할 수 있다.
+- @RequestParam 을 여러 개 쓸 수도 있다.
+- 넘겨받아야 할 파라미터가 너무 많을 경우에는 vo를 만들어서 넣어주면 자동으로 vo에 들어간다.
 
 
 
+### SESSION 을 사용하는 방법 : HttpSession session 을 써주기만 하면 된다.
 
+
+  @RequestMapping("/list")
+  public ModelAndView articleList'(HttpSession session)'{
+    ModelAndView view = new ModelAndView();
+    view.setViewName("article/list");
+    
+    view.addObject("title", "제목");
+    view.addObject("author", "글쓴이");
+    
+    return view;
+  }
 
