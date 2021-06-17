@@ -49,4 +49,23 @@ ModelMap 저장한 값 : <input type="text" value="$modelMapVar}" /><br/>
 - return type ModelAndView
 
 
+Java Controller
+```
+@RequestMapping(value="test.do")
+public ModelAndView test(HttpServletRequest request, ModelAndView mv){
+String modelAndViewStr = "ModelAndView Test";
 
+mv.addObject("modelAndViewVar", modelAndViewStr);
+mv.setViewName("temp/test");
+
+return mv;
+}
+```
+
+
+JSP
+```
+<body>
+ModelAndView 저장한 값: <input type="text" value="${modelAndViewVar}"/><br/>
+</body>
+```
