@@ -51,6 +51,16 @@ public class FileDownloadView extends AbstractView{
         super.setContentType("application/octet-stream");
         log = Logger.getLogger(this.getClass());
     }
+    
+    @Override
+    protected void renderMergedOutputModel(Map model, HttpServletRequest request, HttpServletResponse response) throws Ecception{
+        // Controller 에서 넘어온 파일 정보를 추출한다.
+        // 여기서 Map인 model 객체는 Controller로 부터 ModelAndView 객체에 addObject 하여 넘어온 정보다.
+        File file = (File)model.get("file");
+        
+        response.setContentType(getContentType());
+        response.setContentLength((int)file.length());
+        response.setHeader("C
 ```
 
 
