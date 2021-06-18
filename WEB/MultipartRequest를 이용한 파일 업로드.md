@@ -10,5 +10,29 @@ JSP에서 파일을 보낼때 다음과 같이 form 에 **enctype="multipart/for
 
 controller 에서는 jsp에서 넘어온 request 정보를 multipartRequest로 캐스팅 후 파일 정보를 추추라여 업로드 처리를 한다.
 ```
-
+public ModelAndView registBoard(HttpServletRequest request
+                              , HttpServletResponse response, Object command) throws Exception{
+    ModelAndView mnv = new ModelAndView();
+       
+    // 넘어온 request를 multipartRequest로 캐스팅 한 후
+    MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+       
+    // getFileNames를 통해 구하고자 하는 파일 이름들을 구하면 Iterator 형태로 넘어온 file 들의 이름들이 리턴된다.
+    Iterator fileNameIter = multipartRequest.getFileNames();
+       
+    // Iterator 형태로 추출된 파일들의 이름을 키값으로 하여, while 문을 돌면서 넘어온 파일들의 정보를 추출한다.
+    while (fileNameIter.hasNext()){
+        String key = (String)fileNameIter.next();
+        MultipartFile file = multipartRequest.getFile(key);
+           
+        //파일 업로드 로직 부분
+        ...;
+    }
+    
+    mnv.setViewName("파일 업로드 후 전송될 페이지 정보");
+    return mnv;
+}
 ```
+
+
+
