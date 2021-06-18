@@ -35,4 +35,16 @@ public ModelAndView registBoard(HttpServletRequest request
 ```
 
 
+### 파일 다운로드
+
+Spring에서 파일 다운로드를 구현하고 하는 경우
+AbstractView 클래스를 상속받아, 다운로드 파일의 출력을 하기 위한 특정 view 클래스를 만들어 구현하는 방법이 있다.
+
+다운로드 기능을 담당하기 위해 **AbstractView 클래스를 상속받은  FileDownloadView 클래스** 이다.
+
+```
+
+```
+
+
 
