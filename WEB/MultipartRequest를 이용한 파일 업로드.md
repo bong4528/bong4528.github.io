@@ -43,7 +43,13 @@ AbstractView 클래스를 상속받아, 다운로드 파일의 출력을 하기 
 다운로드 기능을 담당하기 위해 **AbstractView 클래스를 상속받은  FileDownloadView 클래스** 이다.
 
 ```
-
+public class FileDownloadView extends AbstractView{
+    private Logger log = null;
+    
+    public FileDownloadView(){
+        super.setContentType("application/octet-stream");
+        log = Logger.getLogger(this.getClass());
+    }
 ```
 
 
