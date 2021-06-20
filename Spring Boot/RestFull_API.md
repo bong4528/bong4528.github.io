@@ -12,7 +12,7 @@ representation 은 선택된의 뜻.
 State          :  웹 애플리케이션의 상태
 Transfer       :  전송
 
-출처: https://blog.npcode.com/2017/04/03/res의-representation이란-무엇인가/
+출처: https://blog.npcode.com/2017/04/03/rest%EC%9D%98-representation%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/
 
 여기서 hello 는 서버의 리소스가 아니다.
 그럼? **representation data**
