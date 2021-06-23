@@ -67,4 +67,39 @@ localhost:3000 번으로 실행된다. 그래서 **CORS (cross-origin requests)*
 **curl http://localhost:3000/api/hello** 테스트 하면 확인가능
 
 
+### 5. React 의 App.js 를 변경해서 Rest API 의 값을 받고 출력해내기
+
+```
+import React, {useState, useEffect} from 'react';  --추가
+import logo from './logo.svg';
+import './App.css';
+
+-- 추가
+function App () {
+const [message, setMessage] = useState("");
+useEffect(() => {
+fetch('/api/hello')
+.then(response => response.text())
+.then(message => {
+setMessage(message);
+});
+},[])
+
+return (
+<div className="App">
+<header className="App-header">
+<img src={logo} className="App-logo" alt="logo"/>
+<h1 className="App-title">{message}</h1>  -- 추가
+</header>
+<p className="App-intro">
+To get started, edit <code>src/App.js</code> and save to reload.
+</p>
+</div>
+)
+}
+export default App;
+
+```
+
+
 
