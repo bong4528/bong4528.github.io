@@ -67,6 +67,44 @@ dog.say();  // 강아지
 지금은 리액트 훅으로 다 한다. HOW ?**
 
 
+함수형 컴포넌트를 선언할 때사용하는 방법으로 기존의 일반적인 함수 선언 방식이 있고, ES6의 화살표 함수(arrow function)방식도
+있다. 화살표 함수의 경우 함수를 파라미터로 전달할 때 유용하다. 비슷한 점도 많지만, 두 문법이 확실하게 다르다는 점은 다음 예제를
+통해서 알 수가 있다.
+
+```
+function Dog(){
+  this.name = '흰둥이';
+  return {
+    name : '검둥이',
+    bark: function(){
+      console.log(this.name + ': 멍멍!');
+    }
+  }
+}
+
+const dog = new Dog();
+dog.bark();   // 검둥이: 멍멍!
+```
+
+```
+function Dog(){
+  this.name = '흰둥이';
+  return {
+    name : '검둥이',
+    bark: () => {
+      console.log(this.name + ': 멍멍!');
+    }
+  }
+}
+
+const dog = new Dog();
+dog.bark();   // 흰둥이: 멍멍!
+```
+
+**function()을 사용하면 검둥이**
+**() =>{} 를 사용하면 흰둥이**
+### 일반 함수는 자신이 종속된 객체를 this 로 가리키며, 화살표 함수는 자신이 종속된 인스턴스를 가리킨다.
+
 
 
 
