@@ -107,5 +107,41 @@ dog.bark();   // 흰둥이: 멍멍!
 
 
 
+props 는 프로퍼티(properties)를 줄인 표현으로 컴포넌트 속성을 설정할 때 사용하는 표현이다. props 값은 해당 컴포넌트를 불러와 
+사용하는 부모 컴포넌트에서 설정할 수 있다. 그리고 경우에 따라서 propTypes 컴포넌트 속성을 통해  props의 타입을 지정해 줄 수 있다.
+타입스크립트를 사용하다면 굳이 propTypes 를 사용하지 않아도 타입 체크를 할 수가 있다. 클래스형 컴포넌트의 경우 render 함수에서
+this.props 를 조회해서 사용할 수 있다.
+
+App.js
+```
+import React from 'react';
+import MyComponent from './MyComponent';
+
+const App = () => {
+  return <MyComponent name="리액트"></MyComponent>;
+}
+
+export default App;
+```
+
+MyComponent.js
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const MyComponent = ({name} => {
+  return (
+    <div>제 이름은 {name}입니다.</div>
+  );
+};
+
+
+MyComponent.propTypes = {
+  name: PropTypes.string
+};
+
+export default MyComponent;
+```
+
 
 
