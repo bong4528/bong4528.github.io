@@ -42,3 +42,29 @@ function Example() {
   
 }
 ```
+
+state 는 원시타입 뿐만 아니라 객레로 사용할 수도 있다. 여러개의 useState를 사용할 수도 있지만, 이와 같이 하나의 state 에
+여러 프로퍼티를 추가해서 두 가지 이상의 상태를 관리할 수도 있다.
+```
+import React, { useState } from "react";
+import "./styles.css";
+
+export default function App(){
+  const [state, setState] = useState( {
+    name: "John",
+    id: 0
+  });
+  
+  return (
+  <div classname = "App">
+    <h3>name : {state.name}</h3>
+    <he>id: {state.id} </h3>
+    <button onClick={() => setState( {...state, id: state.id + 1} )}>
+      increase
+    </button>
+  </div>
+  );
+}
+```
+
+
