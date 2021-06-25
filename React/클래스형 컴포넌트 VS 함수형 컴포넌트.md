@@ -167,9 +167,28 @@ class Counter extends Component {
   
   render(){
     const { number } = this.state; // state 를 조회할 때에는 this.state 로 조회합니다.
-    
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          // onClick 를 통하여 버튼이 클릭됐을 때 호출 할 함수를 지정합니다.
+          onClick={ () => {
+            /this.setState 를 사용하여 state에 새로운 값을 넣을 수 있습니다.
+            this.setState({ number: number + 1 });
+          }}
+        >
+        +1
+        </button>
+      </div>
+    );
   }
 }
+
+export default Counter;
 ```
+
+state는 constructor 밖으로 빼서 생성해 줄 소도 있다. 그럴 경우에는 클래스 안에 state = {} 와 같이 선언해 주면 된다.
+그리고 어떤 이벤트에서 state의 값을 동시에 여러 차례 바꿔어 주어야 할 수도 있는데 이 때 올바르게 연산이 일어나게 하려면 
+prevState 를 인자로 받아서 매번 state 를 바꿀때 마다 직전까지 업데이트 된 state를 받아오고 연산을 처리한다.
 
 
