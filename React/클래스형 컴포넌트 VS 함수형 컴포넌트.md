@@ -41,4 +41,33 @@ function App(){
 }
 ```
 
+클래스형 컴포넌트와 함수형 컴포넌트의 역할은 동일하다. 
+차이점이 있다면 **클래스형 컴포넌트의 경우 state** 기능 및 라이프 사이클 기능을 사용할 수 있다.
+그리고 render 함수가 꼭 있어야 하고, 그 안에서 보여 주어야 할 JSX를 반환해야 한다.
+또한 과거의 prototype 을 이용해서 구현하던 문법을 ES6 문법 부터는 class 문법을 사용하여 구현할 수도 있다.
+
+
+클래스 컴포넌트
+```
+class Dog{
+  constructor(name){
+    this.name = name;
+  }
+  
+  say(){
+    console.log(this.name + ': 멍멍');
+  }
+}
+
+const dog = new Dog('강아지');
+dog.say();  // 강아지
+```
+
+**함수형 컴포넌트 : 과거에는 state 와 라이프 사이클 API를 사용할 수 없다는 단점
+지금은 리액트 훅으로 다 한다. HOW ?**
+
+
+
+
+
 
