@@ -148,3 +148,18 @@ state는 컴포넌트 내부에서 바뀔 수 있는 값을 의미한다. props 
 
 
 
+클래스형 컴포넌트에서는 클래스 내의 constructor 메소드에서 state의 초기값을 생성해 주어야 한다. 그리고 constructor를 작성할 때
+super(props)를 반드시 호출해 주어야 한다. state를 조회할 때는 this.state로 조회하며, state의 값을 변경하고 싶을 때는 this.setState 
+함수를 통해서 바꾸어 준다. 예제 코드는 다음과 같다.
+
+```
+import React, {Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+  }
+}
+```
+
+
