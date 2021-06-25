@@ -15,6 +15,14 @@
 userState는 가장 기본적인 Hook이며, 함수형 컴포넌트에서 가변적인 상태를 지닐 수 있게 해 준다. 
 함수형 컴포넌트에서 상태를 관리해야 할 때 사용한다.
 
+**const[count, setCount] = useState(0);
+: useState 함수를 호출하면 배열을 반환하는데,
+1번째 원소 count 는 현재 상태값 변수, 2번째 원소 setCount는 상태값을 갱신해 주는Setter 함수
+useState 괄호 안의 값은 상태의 초기값 이다.
+const [상태 값 저장변수, 상태 값 갱신 함수] = useState(상태 초기값);**
+출처 : https://xiubindev.tistory.com/97
+
+
 ```
 import React, { useState } from 'react';
 
