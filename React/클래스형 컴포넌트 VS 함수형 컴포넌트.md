@@ -143,5 +143,8 @@ MyComponent.propTypes = {
 export default MyComponent;
 ```
 
+state는 컴포넌트 내부에서 바뀔 수 있는 값을 의미한다. props 의 경우 부모 컴포넌트가 설정해서 자식 컴포넌트는 읽기만 할 수 있는값
+이며 바꾸기 위해서는 부모 컴포넌트에서 직접 변경을 해야 한다. 자식 컴포넌트 내에서 값을 변화하여야 하는 경우 state를 사용한다.
+
 
 
