@@ -14,3 +14,15 @@ life-cycle 과  state 관리 모두 가능하다.
 1.2 use state: 함수형 컴포넌트에 상태값 추가하기
 useStae 훅을 이용하면 함수형 컴포넌트에서도 상태값을 관리할 수 있다.
 
+```
+import React, {useState} from 'react';
+
+function Profile(){
+  const [name, setName] = useState('');
+  return(
+    <div>
+    </div>
+  )
+}
+
+```
