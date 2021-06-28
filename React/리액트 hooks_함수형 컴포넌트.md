@@ -57,7 +57,21 @@ function profile(){
 
 
 ### 1.3 Life-cycle 함수 사용하기 : useEffect
+`useEffect` 훅을 사용하여 함수형 컴포넌트에서도 life-cycle 함수를 이용할 수 있다.
+클래스형 컴포넌트에서의 각각 생명주기 메소드에 대응하는 훅이 존재하는 것은 아니지만.
+`useEffect` 훅을 이용하면 비슷한 기능을 한 곳으로 모을 수 있어서 가독성이 좋아진다.
 
+```
+import React, {useState, useEffect } from 'react';
+
+function MyComponent(){
+ const [count, setCount ] = useState(0);
+ useEffect( () => {
+   document.title = `업데이트 횟수: ${count}`;
+ });
+ return <button onClick= { () => setCount( count + 1) } > 증가 </button>
+}
+```
 
 1.3.1 API를 호출하는 기능 : 함수형 컴포넌트에서
 
