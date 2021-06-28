@@ -17,9 +17,11 @@ userState는 가장 기본적인 Hook이며, 함수형 컴포넌트에서 가변
 
 **const[count, setCount] = useState(0);
 : useState 함수를 호출하면 배열을 반환하는데,
-1번째 원소 count 는 현재 상태값 변수, 2번째 원소 setCount는 상태값을 갱신해 주는Setter 함수
+1번째 원소 count 는 현재 상태값 변수, 
+2번째 원소 setCount는 상태값을 갱신해 주는Setter 함수 
 useState 괄호 안의 값은 상태의 초기값 이다.
 const [상태 값 저장변수, 상태 값 갱신 함수] = useState(상태 초기값);**
+
 출처 : https://xiubindev.tistory.com/97
 
 
@@ -67,4 +69,35 @@ export default function App(){
 }
 ```
 
+
+## useEffect
+
+useEffect는 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록 설정할 수 있는 Hook 이다. 클래스형 컴포넌트의
+componentDidMount 와  componentDidUpdate, componentWillUnmount를 합친 형태로 보아도 된다.
+이 훅을 통해서 함수형 컴포넌트에서 사이트 이펙트 (side effect)를 수행할 수 있는데, 여기서 사이드 이펙트는
+데이터 가져오기, 구독 설정, 수동으로 DOM 조작 등을 말한다.
+
+
+```
+import React, { useState, useEffect } from 'react';
+
+function Example(){
+  const [count, setCount] = useState(0);
+  
+  // componentDidMount, componentDidUpdate 와 같은 방식으로
+  useEffect(() => {
+  // 브라우저 API를 이용하여 문서 타이틀을 업데이트 합니다.
+  document.title = 'You clicked ${count} times';
+  });
+  
+  return(
+    <div>
+      <p>You clicked {count} times </p>
+      <button onClick={()=> setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+    );
+}
+```
 
