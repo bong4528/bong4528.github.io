@@ -18,7 +18,7 @@ JSX라는 문법을 통해서 HTML 과 비슷한 형태로 작성을 하고, 그
 - 컴포넌트가 업데이트 된 직후 어떤 부분이 업데이트 되었는지 체크하고 싶다면 어디서 그 로직을 작성해야 할까요?
 
 
-https://user-images.githubusercontent.com/39070977/123569790-f7ddb080-d801-11eb-87d8-0e7cb9833627.png
+![LifeCycle]: https://user-images.githubusercontent.com/39070977/123569790-f7ddb080-d801-11eb-87d8-0e7cb9833627.png
 
 ### Mounting : 리액트 코드 첫 렌더링의 시작
 
