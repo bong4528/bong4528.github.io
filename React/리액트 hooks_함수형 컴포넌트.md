@@ -8,12 +8,31 @@
 클래스형 컴포넌트의 기능을 사용할 수 있는 함수형 컴포넌트라고 볼 수 있다.
 life-cycle 과  state 관리 모두 가능하다.
 
-1.1.1 훅의 장점
+**1.1.1 훅의 장점**
 재사용 가능한 로직의 관리가 쉽다.
 
-1.2 use state: 함수형 컴포넌트에 상태값 추가하기
+**1.2 use state: 함수형 컴포넌트에 상태값 추가하기**
 useStae 훅을 이용하면 함수형 컴포넌트에서도 상태값을 관리할 수 있다.
+```
+import React, {useState} from 'react';
 
+function Profile(){
+  const [name, setName] = useState('');
+  return (
+    <div>
+      <p>{`name is ${name}`}</p>
+      <input type='text' value={name} onChange= { e => setName(e.target.value) } />
+    </div>
+  );
+}
+```
+
+`useState` 훅은 배열에 두 값을 넣어서 반환한다.
+배열의 
+첫 번째 원소는 상태값 즉 `state` 인데 함수 호출 시 입력한 인수가 초기값으로 사용된다.
+두 번째 원소는 상태값을 변경할 수 있는 함수이다.
+배열의 비구조화 할당 문법을 이용해서 각 원소에 이르을 부여한다. 이처럼 `useStae` 훅을
+통해서 함수형 컴포넌트에서도 상태값을 사용할 수 있다.
 
 1.2.1 여러 상태값 하나로 관리하기
 
