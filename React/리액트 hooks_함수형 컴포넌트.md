@@ -31,11 +31,24 @@ function Profile(){
 배열의 
 첫 번째 원소는 상태값 즉 `state` 인데 함수 호출 시 입력한 인수가 초기값으로 사용된다.
 두 번째 원소는 상태값을 변경할 수 있는 함수이다.
-배열의 비구조화 할당 문법을 이용해서 각 원소에 이르을 부여한다. 이처럼 `useStae` 훅을
+**배열의 비구조화 할당 문법** 을 이용해서 각 원소에 이르을 부여한다. 이처럼 `useStae` 훅을
 통해서 함수형 컴포넌트에서도 상태값을 사용할 수 있다.
 
 1.2.1 여러 상태값 하나로 관리하기
 
+`useState` 훅 하나로 여러 상태값을 하나의 객체에 담아서 관리할 수 있다.
+
+```
+import React, {useState} from 'react';
+
+function profile(){
+  const [state, setState] = useState({ name: "", age: 0});
+  return (
+    <div>
+    </div>
+  )
+}
+```
 
 
 ### 1.3 Life-cycle 함수 사용하기 : useEffect
