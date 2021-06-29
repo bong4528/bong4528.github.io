@@ -37,4 +37,29 @@ let user = {firstName: 'John', lastName:'Doe'};
 let user_clone = Object.assign( {}, user );
 ```
 
-### 5. 
+### 5. 인수가 여러 개인 경우
+
+### 6. Object.assign을 사용한 예 (form)
+어떨 때 Object.assign를 사용하면 좋을까라는 의문이 있을 것이라고 생각되므로 입력 폼의 값을
+유지하는 form 객체를 사용하여 설명하도록 하겠다.
+
+```
+const form = {
+  firstName: null,
+  lastName: null
+}
+```
+입력 폼에 값이 들어어고 이를 input 객체로 받는다.
+
+```
+const input = {
+  firstName: 'John Doe'
+}
+```
+form 객체를 input 객체로 덮어쓰는 경우에 Object.assign 을 이용하면 아래와 같이 firstName의 값이 덮어쓰어진
+것을 알수 있다.
+```
+Object.assign(form, input)
+// 결과
+{ firstName: 'John Doe', lastName: null }
+```
