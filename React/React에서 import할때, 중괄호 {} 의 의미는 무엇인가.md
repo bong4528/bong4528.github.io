@@ -30,3 +30,34 @@ render 변수는 react-dom 이라는 패키지에서 불러왔다.
 모듈을 다른 파일로 보내려면 export 라고 명시적으로 써줘야 한다.
 
 예를 들어보면,
+App.js 에서 다음과 같이 선언한다.
+
+```
+const a = 1;
+const b = 2;
+
+export { a };
+export default b;
+export const c = 3;
+
+```
+위와 같이 App.js 에서 세 가지 방식으로 export를 했다.
+
+변수 a는 객체에 담아서 export 하고, 
+변수 b는 독특하게 앞에 default 라는 키워드를 붙인 채 export 했다.
+변수 c 는 선언 및 초기화와 동시에 바로 export 했다.
+
+
+또 다른 함수 Sub.js 에서 App.js 에서 export 한 것들을 불러오려고 한다.
+```
+import b, {a, c as e } from './App';
+console.log(a, b, e); // 1,2,3
+```
+와 같이 작성한다.
+
+(해석)
+App.js 에서 export 한 값들을 불러오려면,
+Sub.js 에서는 코드 윗쪽에 import 를 선언하면 된다.
+
+
+
