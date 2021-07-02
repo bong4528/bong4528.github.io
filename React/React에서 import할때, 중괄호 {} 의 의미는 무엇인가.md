@@ -4,8 +4,8 @@
 
 
 
-어떤 것은 그냥 import 하고,
-어떤 것은 중괄호 {} 안에 변수를 적어 준다는 것이다.
+**default import : 어떤 것은 그냥 import 하고,
+member import (named import) : 어떤 것은 중괄호 {} 안에 변수를 적어 준다는 것이다.**
 
 무슨 차이가 있는지 검색해 봤다.
 
