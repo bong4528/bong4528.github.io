@@ -38,8 +38,9 @@ const a = 1;
 const b = 2;
 
 export { a };
-export default b;
 export const c = 3;
+
+export default b;
 
 ```
 위와 같이 App.js 에서 세 가지 방식으로 export를 했다.
@@ -51,14 +52,24 @@ export const c = 3;
 
 또 다른 함수 Sub.js 에서 App.js 에서 export 한 것들을 불러오려고 한다.
 ```
-import b, {a, c as e } from './App';
-console.log(a, b, e); // 1,2,3
+import zz, {a, c as e } from './App';
+console.log(a, zz, e); // 1,2,3
 ```
 와 같이 작성한다.
 
 (해석)
 App.js 에서 export 한 값들을 불러오려면,
 Sub.js 에서는 코드 윗쪽에 import 를 선언하면 된다.
+
+그런데 뭔가 이상하다.
+처음보는 ZZ는 괄호없이 불러오고,
+나머지 a, c 는 괄호 안에서 불러옵니다. 또한, c 는 위에 as e 라고 되어 있네요.
+default는 번역하면 기본이라는 뜻이다.
+말그대로, default 로 export한 b는 괄호를 사용하지 않아도 import 할 수 있다.
+그리고 변수명도  Sub.js 에서 마음대로 지을 수 있습니다.
+**위 코드에서는 변수 zz가 바로 변수 b 를 import 한 것이다.**
+
+
 
 
 
